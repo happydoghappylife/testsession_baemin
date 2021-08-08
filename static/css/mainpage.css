@@ -1,0 +1,39 @@
+
+.store_list {
+    width: 100%;
+}
+
+.store_list_count {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Adding_button {
+    background: #2ac1bc;
+    text-decoration-color: white;
+    color: white;
+    border: 1px white;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Adding_button:hover{
+    color: #2ac1bc;
+    background:white;
+}
+
+.store-list_all {
+    display: grid;
+    row-gap: 5px;
+    column-gap: 2px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 20px;
+    border: thin;
+}

@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/store.css' %}" />
+    {% block head %} 
+    {% endblock %}
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header class="mainpage_header">
+        <a href="{% url 'mainpage' %}">
+            <img src="{% static 'header_logo.png' %}" alt="" />
+        </a>
+        <a href="{% url 'mainpage' %}">
+            <span class="header_title">배달의 민족</span>
+        </a>
+    </header>
+    <main class="main"> 
+        {%block main%} 
+        {%endblock%}
+    </main>
+</body>
+</html>

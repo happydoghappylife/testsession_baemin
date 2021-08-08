@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/mainpage.css' %}" />
+{% endblock %}
+
+{% block title %}
+MainPage
+{%endblock%}
+
+{% block main %}
+
+<div class="store_list">
+    <br>
+    <div class="store_list_count">
+      <span>음식점 {{stores_count}} 곳을 찾았습니다</span>
+      <button class="Adding_button"><a href="{% url 'create' %}">가게 추가</a></button>
+    </div>
+
+    <ul class="store-list_all">
+      {% for store in stores %}
+      <li class="store-item">
+        <a href="{% url 'detail' store.id %}">
+          <img class="store-img" src="{{ store.image.url }}" alt="대표사진" />
+        </a>
+        <a class="store-detail" href="{% url 'detail' store.id %}">
+          <span class="detail__title font-lg">{{store.title}}</span>
+          <span class="detail__menu">대표메뉴: {{store.menu_title}}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+</div>
+
+{%endblock%}
+
